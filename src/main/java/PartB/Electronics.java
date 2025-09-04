@@ -29,13 +29,13 @@ public class Electronics extends items {
     public void Sell(){
         Scanner input = new Scanner(System.in);
         int selected,amount;
-        System.out.println("Select what you want to buy");  
+        System.out.println("Select what you want to buy");  // asking which item they wanna sell
         for (int i = 0; i < counter ; i++) {
             System.out.println((i+1) + " " +El[i].Name + ". " + El[i].Quantity + " Left");
         }
         selected = input.nextInt() - 1;
         input.nextLine();
-        System.out.println("How many do you want to sell");
+        System.out.println("How many do you want to sell"); // the amount of that item they wanna sell
         amount = input.nextInt();
         input.nextLine();
         
@@ -46,7 +46,7 @@ public class Electronics extends items {
     }
     
     public int decrease(int amount,int selected){
-               return El[selected].Quantity =  El[selected].Quantity - amount;
+               return El[selected].Quantity =  El[selected].Quantity - amount; // changing the amount in stock
     }
     
     @Override
@@ -54,13 +54,13 @@ public class Electronics extends items {
         Scanner input = new Scanner(System.in);
         int selected,amount;
         double owed = 0;
-        System.out.println("Select what you want to buy");  
+        System.out.println("Select what you want to buy");  // asking what stock they gonna buy
         for (int i = 0; i < counter ; i++) {
             System.out.println((i+1) + " " +El[i].Name + ". " + El[i].Quantity + " Left");
         }
         selected = input.nextInt() - 1;
         input.nextLine();
-        System.out.println("How many do you want to buy");
+        System.out.println("How many do you want to buy"); // asking the amount of that stock they want to buy
         amount = input.nextInt();
         input.nextLine();
         
@@ -70,11 +70,11 @@ public class Electronics extends items {
         
     }
     public int Increase(int amount,int selected){
-             return   El[selected].Quantity =  El[selected].Quantity + amount;
+             return   El[selected].Quantity =  El[selected].Quantity + amount;// changing the amount in stock
     }
     
     @Override
-    public void NewItem(){
+    public void NewItem(){// adding new items 
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the name of the item");
         String Name = input.nextLine();
@@ -90,7 +90,7 @@ public class Electronics extends items {
     }
     
     @Override
-    public void GetDetails(){
+    public void GetDetails(){ // getting details off all of the stock
         Scanner input = new Scanner(System.in);
         for (int i = 0; i < counter; i++) {
             System.out.println("Item: " + El[i].Name);

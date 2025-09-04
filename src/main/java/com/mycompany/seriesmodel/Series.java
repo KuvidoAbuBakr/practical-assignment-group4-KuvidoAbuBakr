@@ -41,11 +41,11 @@ public class Series {
                        break; 
                     }
                 }
-                System.out.println("Enter the number of episodes for: "+SeriesName);
+                System.out.println("Enter the number of episodes for: "+SeriesName);// entering number of episodes
                 SeriesNumberOfEpisides = input.nextLine();
                 System.out.println("Enter the number of episodes for: "+SeriesName);
                 System.out.println("Series processed successfully!!!");
-                details[count-1] = new Series (SeriesID, SeriesName, SeriesAge, SeriesNumberOfEpisides);
+                details[count-1] = new Series (SeriesID, SeriesName, SeriesAge, SeriesNumberOfEpisides);// adding all of the details intot he array
                 
        
    }
@@ -84,7 +84,7 @@ public class Series {
        }
        System.out.println("-----------------------------");
        if(find){
-           
+           // displaying after searching
            System.out.println("\nSERIES ID: " + details[array].SeriesID
                    + "\nSERIES NAME: " + details[array].SeriesName
                    + "\nSERIES AGE RESTRICTION: " + details[array].SeriesAge
@@ -153,7 +153,7 @@ public class Series {
            }
            
        }  
-       System.out.println("Are you sure you want to delete series 101 from the system? Yes (y) to delete.");
+       System.out.println("Are you sure you want to delete series "+ SeriesID +" from the system? Yes (y) to delete.");
        String delete = input.nextLine();
        System.out.println("-----------------------------");
        if(find){
