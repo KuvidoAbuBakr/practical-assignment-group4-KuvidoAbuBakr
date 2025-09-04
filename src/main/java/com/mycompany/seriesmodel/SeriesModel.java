@@ -36,7 +36,9 @@ public class SeriesModel {
                     details.Capture();   
                     break;
                 case 2:
-                    details.Search();
+                     System.out.println("Enter the series id to search: ");
+                    SeriesID = input.nextLine();
+                    details.Search(SeriesID);
                     break;
                 case 3:
                     details.update();

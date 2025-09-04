@@ -15,6 +15,7 @@ public class Series {
      public String SeriesName;
      public String SeriesAge;
      public String SeriesNumberOfEpisides;
+     public String Unittest;//using for the user input for unit tests
      Series[] details = new Series[100];
      int count = 0;
      public Series(String SeriesID,String SeriesName,String SeriesAge,String SeriesNumberOfEpisides){
@@ -68,13 +69,12 @@ public class Series {
         }
    }
    
-   public int Search(){// it will return either 1 or 0 for unit testing purposes
-       String SeriesID;
+   public int Search( String SeriesID){// it will return either 1 or 0 for unit testing purposes
+      
         Scanner input = new Scanner(System.in);
        int array = 0;// where in the array the series is found
        boolean find = false;
-       System.out.println("Enter the series id to search: ");
-       SeriesID = input.nextLine();
+      
        for (int i = 0; i < count; i++) {
            if (details[i].SeriesID.equals(SeriesID)) {
               find = true; 
@@ -93,7 +93,7 @@ public class Series {
            return 1;
         }
        else{
-           System.out.println("Series with Series ID: " + details[array].SeriesID + " was not found");
+           System.out.println("Series with Series ID: " + SeriesID + " was not found");
            System.out.println("-----------------------------");
            return 0;
        }
@@ -101,7 +101,7 @@ public class Series {
     }
    
    
-   public int update(){ /// returns 1 or 0 for unit testing purposes
+   public void update(){ /// returns 1 or 0 for unit testing purposes
     String SeriesID, SeriesName, SeriesAge, SeriesNumberOfEpisides;
     Scanner input = new Scanner(System.in);
        int array = 0;// where in the array the series is found
@@ -116,6 +116,7 @@ public class Series {
            
        } 
          if(find){
+             
                 System.out.println("Enter the series name: ");//entering name
                 SeriesName = input.nextLine();
                 while(true){
@@ -129,16 +130,16 @@ public class Series {
                 SeriesNumberOfEpisides = input.nextLine();
                 System.out.println("Enter the number of episodes for: "+SeriesName);
                 details[array] = new Series (SeriesID, SeriesName, SeriesAge, SeriesNumberOfEpisides);
-                return 1;
+               
                 
         }
          else{
            System.out.println("Series with Series ID: " + details[array].SeriesID+ " was not found");
-           return 0;
+         
        }
    }
    
-   public int delete(){
+   public void delete(){
     String SeriesID;
     Scanner input = new Scanner(System.in);
        int array = 0;// where in the array the series is found
@@ -166,12 +167,10 @@ public class Series {
                System.out.println("Series with Series ID : " + SeriesID + "WAS deleted");
                   
            }
-           return 1;  
        }
        else{
           System.out.println("Series with Series ID: " + details[array].SeriesAge + " was not found");  
           System.out.println("-----------------------------");  
-          return 0;
        }
        
    }

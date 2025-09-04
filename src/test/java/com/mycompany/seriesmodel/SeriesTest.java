@@ -16,6 +16,7 @@ public class SeriesTest {
     
     public void populate(){
         test.details[0] = new Series ("100", "Hi", "14", "15");
+        test.count = 1;
     }
     
     public SeriesTest() {
@@ -52,7 +53,7 @@ public class SeriesTest {
     public void testSearch() {
        populate();
        int Expected = 1;
-       int Actual = test.Search();
+       int Actual = test.Search("100");
        assertEquals(Expected,Actual);
     }
     
@@ -60,7 +61,7 @@ public class SeriesTest {
     public void testSearchfail() {
        populate();
        int Expected = 0;
-       int Actual = test.Search();
+       int Actual = test.Search("101");
        assertEquals(Expected,Actual);
     }
 
@@ -71,14 +72,14 @@ public class SeriesTest {
     public void testUpdate() {
         populate();
        int Expected = 1;
-       int Actual = test.Search();
+       int Actual = test.Search("100");
        assertEquals(Expected,Actual);
     }
     
     public void testUpdatefail() {
         populate();
        int Expected = 1;
-       int Actual = test.Search();
+       int Actual = test.Search("101");
        assertEquals(Expected,Actual);
     }
 
@@ -89,14 +90,14 @@ public class SeriesTest {
     public void testDelete() {
        populate();
        int Expected = 1;
-       int Actual = test.Search();
+       int Actual = test.Search("100");
        assertEquals(Expected,Actual);
     }
     
     public void testDeletefail() {
         populate();
        int Expected = 1;
-       int Actual = test.Search();
+       int Actual = test.Search("101");
        assertEquals(Expected,Actual);
     }
     

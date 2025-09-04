@@ -10,7 +10,7 @@ package PartB;
  */
 import  java.util.Scanner;
 public class Electronics extends items {
-    private Electronics[] El = new Electronics[100];
+    public Electronics[] El = new Electronics[100];
     private int counter;
     private double Owed = 0;
     public String Name;
@@ -42,7 +42,11 @@ public class Electronics extends items {
         Owed = Owed + amount * El[selected].Price;
         
         System.out.println("That will be R" + Owed);
-        El[selected].Quantity =  El[selected].Quantity - amount;       
+         decrease(selected,amount);       
+    }
+    
+    public int decrease(int amount,int selected){
+               return El[selected].Quantity =  El[selected].Quantity - amount;
     }
     
     @Override
@@ -62,8 +66,11 @@ public class Electronics extends items {
         
        
         System.out.println(amount + " of " + El[selected].Name + " has succesfully been bought");
-        El[selected].Quantity =  El[selected].Quantity + amount;
+        Increase(selected,amount);
         
+    }
+    public int Increase(int amount,int selected){
+             return   El[selected].Quantity =  El[selected].Quantity + amount;
     }
     
     @Override
